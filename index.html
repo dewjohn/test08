@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>有缘再见</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=11">
+    <style type="text/css">
+		 body{background-image:url('https://api.ixxcc.com/cosplay.php?return=img');background-repeat:no-repeat;background-position:center;}
+		.main{width: 300px;height: 150px;margin: auto;position: absolute;text-align: center;top: 0;left: 0;right: 0;bottom: 0;}</style>
+  </head>
+<body>
+	<div class="main">
+		<p id="hitokoto">:D 获取中...</p>
+		<p>有缘再见</p>
+		<script>
+		    fetch('https://v1.hitokoto.cn')
+		        .then(response => response.json())
+		        .then(data => {
+		            const hitokoto = document.getElementById('hitokoto')
+		            hitokoto.innerText = data.hitokoto
+		        })
+		        .catch(console.error)
+		</script>
+    </div>
+</body>
+</html>
